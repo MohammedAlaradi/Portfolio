@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #0055ff;
+            --accent-light: #f0f5ff;
+            --border: #f0f0f0;
+            --card-hover: #fcfcfc;
+        }
+
+        * { box-sizing: border-box; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        /* Sidebar / Header */
+        header {
+            padding: 80px 60px;
+            background: #fafafa;
+            border-right: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-pic {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        h1 { font-size: 1.5rem; font-weight: 600; margin: 0 0 4px 0; letter-spacing: -0.03em; }
+        .name-label { margin: 0; font-weight: 500; color: var(--text-main); }
+        .title { font-size: 0.85rem; color: var(--accent); font-weight: 500; margin: 2px 0 0 0; }
+
+        .certification-badge {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        nav { margin-top: auto; }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+        .nav-link:hover { color: var(--accent); transform: translateX(5px); }
+        
+        /* Icon styling */
+        .material-symbols-outlined {
+            font-size: 20px;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Main Content */
+        main { padding: 80px 100px; }
+        section { margin-bottom: 120px; }
+        h2 { 
+            font-family: 'JetBrains Mono', monospace; 
+            font-size: 0.8rem; 
+            color: var(--text-muted); 
+            margin-bottom: 50px; 
+            letter-spacing: 0.15em;
+            display: flex;
+            align-items: center;
+        }
+        h2::after { content: ""; height: 1px; flex: 1; background: var(--border); margin-left: 20px; }
+
+        .stack-group { margin-bottom: 40px; }
+        .stack-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; display: block; color: var(--text-muted); }
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { 
+            font-size: 0.85rem; 
+            padding: 6px 14px; 
+            border: 1px solid var(--border); 
+            border-radius: 8px;
+            background: white;
+            font-weight: 500;
+        }
+        .tag:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+        .project-item { margin-bottom: 100px; position: relative; }
+        .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
+        .project-name { font-size: 1.4rem; font-weight: 600; margin: 0; }
+        .project-name a { text-decoration: none; color: inherit; }
+        .project-name a:hover { color: var(--accent); }
+        .project-year { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted); }
+        .project-desc { color: #444; font-size: 1.05rem; line-height: 1.7; }
+        
+        .lesson-card {
+            background: #fcfcfc;
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border-left: 4px solid var(--accent);
+        }
+        .lesson-card h4 { margin: 0 0 10px 0; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+        
+        .opinion-text { 
+            margin-top: 25px; 
+            font-size: 1rem; 
+            color: var(--text-muted);
+            font-style: italic;
+            padding-left: 20px;
+            position: relative;
+        }
+        .opinion-text::before { content: "“"; position: absolute; left: 0; top: -5px; font-size: 2rem; color: var(--accent-light); font-family: serif; }
+
+        @media (max-width: 1000px) {
+            .layout-grid { grid-template-columns: 1fr; }
+            header { height: auto; border-right: none; border-bottom: 1px solid var(--border); position: relative; padding: 60px 40px; }
+            main { padding: 60px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout-grid">
+    <header>
+        <div class="profile-pic">
+            <img src="extra/Mohammed personal image.jpeg" alt="Profile Picture" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <h1>Personal Information</h1>
+        <p class="name-label">Mohammed Alaradi</p>
+        <p class="title">CS Student @ University of Bahrain</p>
+
+        <div class="certification-badge">✓ Metasploit for Begginers: Ethical Hacking Penetration Testing</div>
+        <div class="certification-badge">✓ AWS Cloud Practitioner Essentials</div>
+        <div class="certification-badge" style="margin-bottom: 15px;">✓ Google Prompting Essentials</div>
+
+        <nav>
+            <a href="mailto:mohdaradi2004@gmail.com" class="nav-link">
+                <span class="material-symbols-outlined">mail</span> Email
+            </a>
+            <a href="https://github.com/MohammedAlaradi" class="nav-link" target="_blank">
+                <span class="material-symbols-outlined">code</span> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/mohammed-alaradi/" class="nav-link" target="_blank">
+                <span class="material-symbols-outlined">person</span> LinkedIn
+            </a>
+            
+            <a href="extra/Mohammed Resume.pdf" download class="nav-link" >
+                <span class="material-symbols-outlined">article</span> Resume
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="techstack">
+            <h2>Technical Toolkit</h2>
+            <div class="stack-group">
+                <span class="stack-label">AI & Development</span>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">React / Expo</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">NLP (BERT)</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Keras</span>
+                    <span class="tag">Node.js</span>
+                </div>
+            </div>
+            <div class="stack-group">
+                <span class="stack-label">Infrastructure</span>
+                <div class="tags">
+                    <span class="tag">Railway</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Selected Works</h2>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-name">
+                        <a href="https://github.com/MohammedAlaradi/Axiom" target="_blank" style="text-decoration:underline">Axiom</a> & 
+                        <a href="https://hub.docker.com/repository/docker/mohammedalaradi/luminas-nlp/general" target="_blank" style="text-decoration:underline">Luminas</a>
+                    </h3>
+                    <span class="project-year">2026</span>
+                </div>
+                <p class="project-desc">A sophisticated task management ecosystem. Integrating an NLP engine into a mobile application to parse natural language into actionable calendar events.</p>
+                
+                <div class="lesson-card">
+                    <h4>What I Learned</h4>
+                    <p style="margin:0; font-size: 0.95rem;">Successfully fine-tuned BERT models for intent classification and NER. Optimized Docker container synchronization for real-time mobile notifications.</p>
+                </div>
+                
+                <div class="opinion-text">
+                    "This project was a new challenge. Almost every part of it was a learning experience, from the intricacies of NLP model training to the complexities of mobile-backend integration."
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-name"><a href="https://github.com/MohammedAlaradi/ITCS489-LMS" target="_blank" style="text-decoration:underline">LMS</a></h3>
+                    <span class="project-year">2025</span>
+                </div>
+                <p class="project-desc">A Library Management System that handles basic library operations.</p>
+                
+                <div class="lesson-card">
+                    <h4>What I Learned</h4>
+                    <p style="margin:0; font-size: 0.95rem;">Learned system design principles and database management techniques for handling library inventories and user interactions.</p>
+                </div>
+                
+                <div class="opinion-text">
+                    "This project execution was not difficult, it focused on the theoretical design of the system. As a good design will always reduce cost and effort."
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
