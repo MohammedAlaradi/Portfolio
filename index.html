@@ -136,7 +136,7 @@
         .project-year { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted); }
         .project-desc { color: #444; font-size: 1.05rem; line-height: 1.7; }
         
-        .lesson-card {
+        .overview-card {
             background: #fcfcfc;
             border: 1px solid var(--border);
             padding: 24px;
@@ -144,7 +144,7 @@
             margin-top: 25px;
             border-left: 4px solid var(--accent);
         }
-        .lesson-card h4 { margin: 0 0 10px 0; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+        .overview-card h4 { margin: 0 0 10px 0; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
         
         .opinion-text { 
             margin-top: 25px; 
@@ -213,19 +213,41 @@
                     <span class="tag">TensorFlow</span>
                     <span class="tag">Keras</span>
                     <span class="tag">Node.js</span>
+                    <span class="tag">Java</span>
                 </div>
             </div>
             <div class="stack-group">
                 <span class="stack-label">Infrastructure</span>
                 <div class="tags">
+                    <span class="tag">Git</span>
+                    <span class="tag">Github</span>
                     <span class="tag">Railway</span>
                     <span class="tag">Docker</span>
+                    <span class="tag">Docker Hub</span>
                 </div>
             </div>
         </section>
 
         <section id="projects">
-            <h2>Selected Works</h2>
+            <h2>Projects</h2>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-name">
+                        <a href="https://github.com/MohammedAlaradi/Status-Bot" target="_blank" style="text-decoration:underline">Status Bot</a>
+                    </h3>
+                    <span class="project-year">2026</span>
+                </div>
+                
+                <div class="overview-card">
+                    <h4>Project Overview</h4>
+                    <p style="margin:0; font-size: 0.95rem;">A Discord bot that keep track of the users status and display them on command.</p>
+                </div>
+                
+                <div class="opinion-text">
+                    "It was a fun useful project, built it for personal use. Optimized it for cloud deployment, accounted for all the possibilities of the cloud server while developing."
+                </div>
+            </div>
 
             <div class="project-item">
                 <div class="project-header">
@@ -235,11 +257,10 @@
                     </h3>
                     <span class="project-year">2026</span>
                 </div>
-                <p class="project-desc">A sophisticated task management ecosystem. Integrating an NLP engine into a mobile application to parse natural language into actionable calendar events.</p>
                 
-                <div class="lesson-card">
-                    <h4>What I Learned</h4>
-                    <p style="margin:0; font-size: 0.95rem;">Successfully fine-tuned BERT models for intent classification and NER. Optimized Docker container synchronization for real-time mobile notifications.</p>
+                <div class="overview-card">
+                    <h4>Project Overview</h4>
+                    <p style="margin:0; font-size: 0.95rem;">An intelligent task management ecosystem. Integrating an NLP engine into a mobile application to parse natural language into actionable calendar events. Accepting inputs from group chats to automate the entire process while keeping a human-in-the-loop to ensure data integrity</p>
                 </div>
                 
                 <div class="opinion-text">
@@ -252,15 +273,14 @@
                     <h3 class="project-name"><a href="https://github.com/MohammedAlaradi/ITCS489-LMS" target="_blank" style="text-decoration:underline">LMS</a></h3>
                     <span class="project-year">2025</span>
                 </div>
-                <p class="project-desc">A Library Management System that handles basic library operations.</p>
-                
-                <div class="lesson-card">
-                    <h4>What I Learned</h4>
-                    <p style="margin:0; font-size: 0.95rem;">Learned system design principles and database management techniques for handling library inventories and user interactions.</p>
+
+                <div class="overview-card">
+                    <h4>Project Overview</h4>
+                    <p style="margin:0; font-size: 0.95rem;">A Library Management System that handles essential library operations.</p>
                 </div>
-                
+
                 <div class="opinion-text">
-                    "This project execution was not difficult, it focused on the theoretical design of the system. As a good design will always reduce cost and effort."
+                    "This project execution was not difficult, it focused on the theoretical design of the system, requirements collection and project management."
                 </div>
             </div>
         </main>
